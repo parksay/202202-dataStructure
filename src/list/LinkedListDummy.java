@@ -1,8 +1,6 @@
-package list.linkedListDummy;
+package list;
 
-import list.List_Inter;
-
-public class Linked_List_Dummy implements List_Inter {
+public class LinkedListDummy implements ListInterface {
 
     private class Node {
         int data;
@@ -14,7 +12,7 @@ public class Linked_List_Dummy implements List_Inter {
     Node cur;
     Node before;
 
-    public boolean LInit(){
+    public boolean listInit(){
         Node dummy = new Node();
         dummy.data = 0;
         dummy.next = null;
@@ -25,7 +23,7 @@ public class Linked_List_Dummy implements List_Inter {
         return true;
     }
 
-    public int LInsert(int data){
+    public int listInsert(int data){
         Node node = new Node();
         node.data = data;
         node.next = this.head.next;
@@ -34,7 +32,7 @@ public class Linked_List_Dummy implements List_Inter {
         return node.data;
     }
 
-    public int LReadFirst(){
+    public int listReadFirst(){
         if(this.count == 0 ) {
             return 0;
         } else {
@@ -44,7 +42,7 @@ public class Linked_List_Dummy implements List_Inter {
         }
     }
 
-    public int LRead(){
+    public int listRead(){
         if(this.cur.next == null) {
             return 0;
         } else {
@@ -54,7 +52,7 @@ public class Linked_List_Dummy implements List_Inter {
         }
     }
 
-    public int LRemove(){
+    public int listRemove(){
         int del = this.cur.data;
         this.before.next = this.cur.next;
         this.cur = this.before;
@@ -62,7 +60,7 @@ public class Linked_List_Dummy implements List_Inter {
         return del;
     }
 
-    public boolean LNext(){
+    public boolean listIsNext(){
         if (this.cur.next == null) {
             return false;
         } else if (this.cur.next != null) {
@@ -72,12 +70,12 @@ public class Linked_List_Dummy implements List_Inter {
         }
     }
 
-    public int LCount(){
+    public int listCount(){
         return this.count;
     }
 
-    public boolean setCompRule(){
-//        if(setCompRule() == null) {
+    public boolean listSetCompRule(){
+//        if(this.compRule == null) {
 //            FInsert();
 //        } else {
 //            LInsert();

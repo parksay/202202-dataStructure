@@ -1,89 +1,129 @@
 package list;
 
-import list.arrayList.Array_List;
-import list.linkedList.Linked_List;
-import list.linkedListDummy.Linked_List_Dummy;
-
 public class LMain {
 
 
-    public static void main(String args[]) {
-        Array_List aList = new Array_List();
-//        Linked_List aList = new Linked_List();
-//        Linked_List_Dummy aList = new Linked_List_Dummy();
+    public static void main(String args[]) {    // non - CircularLinkedList only
+//        ArrayListBasic aList = new ArrayListBasic();
+//        LinkedList aList = new LinkedList();
+//        LinkedListDummy aList = new LinkedListDummy();
+        DoublyLinkedList aList = new DoublyLinkedList();
 
         //리스트 초기화
-        aList.LInit();
+        aList.listInit();
 
         //데이터 입력
-        int input = 0;
-        input = aList.LInsert(2);
-        LPrint(1, input);
-        input = aList.LInsert(9);
-        LPrint(1, input);
-        input = aList.LInsert(5);
-        LPrint(1, input);
-        input = aList.LInsert(5);
-        LPrint(1, input);
-        input = aList.LInsert(7);
-        LPrint(1, input);
-        input = aList.LInsert(7);
-        LPrint(1, input);
-        input = aList.LInsert(6);
-        LPrint(1, input);
+        int result = 0;
+        int[] input = {2, 9, 5, 5, 7, 7, 6};
+        for(int i = 0; i < input.length; i++) {
+            result = aList.listInsert(input[i]);
+            LPrint(1, result);
+        }
         System.out.println("______________________________");
 
         //데이터 조회
-        int read = 0;
-        read = aList.LReadFirst();
-        LPrint(2, read);
-        while(aList.LNext()){
-            read = aList.LRead();
-            LPrint(2, read);
+        result = aList.listReadFirst();
+        LPrint(2, result);
+        while(aList.listIsNext()){
+            result = aList.listRead();
+            LPrint(2, result);
         }
         System.out.println("______________________________");
 
 
         //데이터 삭제
-        int del = 0;
         int target = 5;
-        if(aList.LReadFirst() == target) {
-            del = aList.LRemove();
-            LPrint(3, del);
+        if(aList.listReadFirst() == target) {
+            result = aList.listRemove();
+            LPrint(3, result);
         } else {
-            while(aList.LNext()){
-                if(aList.LRead() == target) {
-                    del = aList.LRemove();
-                    LPrint(3, del);
+            while(aList.listIsNext()){
+                if(aList.listRead() == target) {
+                    result = aList.listRemove();
+                    LPrint(3, result);
                 }
             }
-            System.out.println("데이터 삭제 끝");
+            System.out.println("데이터 삭제");
         }
         System.out.println("______________________________");
 
         //데이터 조회
-        read = aList.LReadFirst();
-        LPrint(2, read);
-        while(aList.LNext()){
-            read = aList.LRead();
-            LPrint(2, read);
+        result = aList.listReadFirst();
+        LPrint(2, result);
+        while(aList.listIsNext()){
+            result = aList.listRead();
+            LPrint(2, result);
         }
-        System.out.println("______________________________");
+        System.out.println("______________끝______________");
 
 
     }
 
 
+
     private static boolean LPrint(int type, int data){
         if(type == 1) {
-            System.out.println(data + "가 입력되었습니다");
+            System.out.println(data + "을 입력했습니다");
         } else if (type == 2) {
-            System.out.println(data + "가 조회되었습니다");
+            System.out.println(data + "을 조회했습니다");
         } else if (type == 3) {
-            System.out.println(data + "가 삭제되었습니다");
+            System.out.println(data + "을 삭제했습니다");
         } else {
             System.out.println("type 입력 오류");
         }
         return true;
+    }
+
+
+
+    public static void mainCircular(String args[]) {    //CircularLinkedList only
+        CircularLinkedList aList = new CircularLinkedList();
+        //리스트 초기화
+        aList.listInit();
+
+        //데이터 입력
+        int result = 0;
+        int[] input = {2, 9, 5, 5, 7, 7, 6};
+        for(int i = 0; i < input.length; i++) {
+            result = aList.listInsert(input[i]);
+            LPrint(1, result);
+        }
+        System.out.println("______________________________");
+
+        //데이터 조회
+        result = aList.listReadFirst();
+        LPrint(2, result);
+        for(int i = 1; i < aList.listCount(); i++){  //CircularLinkedList only
+            result = aList.listRead();
+            LPrint(2, result);
+        }
+        System.out.println("______________________________");
+
+
+        //데이터 삭제
+        int target = 5;
+        if(aList.listReadFirst() == target) {
+            result = aList.listRemove();
+            LPrint(3, result);
+        } else {
+            for(int i = 1; i < aList.listCount(); i++){  //CircularLinkedList only
+                if(aList.listRead() == target) {
+                    result = aList.listRemove();
+                    LPrint(3, result);
+                }
+            }
+            System.out.println("데이터 삭제");
+        }
+        System.out.println("______________________________");
+
+        //데이터 조회
+        result = aList.listReadFirst();
+        LPrint(2, result);
+        for(int i = 1; i < aList.listCount(); i++){  //CircularLinkedList only
+            result = aList.listRead();
+            LPrint(2, result);
+        }
+        System.out.println("______________끝______________");
+
     }
 }

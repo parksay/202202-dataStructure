@@ -1,15 +1,13 @@
-package list.arrayList;
+package list;
 
-import list.List_Inter;
-
-public class Array_List implements List_Inter {
+public class ArrayListBasic implements ListInterface {
 
     int len = 10;
     int[] list;
     int count;
     int pos;
 
-    public boolean LInit(){
+    public boolean listInit(){
         this.list = new int[this.len];
         this.count = 0;
 
@@ -23,7 +21,7 @@ public class Array_List implements List_Inter {
 //        그래서 내가 안에 아직 아무것도 넣지 않았어도, 길이가 10이 됨.
 //        int length = this.list.length; // length = 10
 
-    public int LInsert(int data){
+    public int listInsert(int data){
         if(this.count < this.len) {
             this.list[this.count] = data;
             this.count++;
@@ -32,20 +30,20 @@ public class Array_List implements List_Inter {
             return 0;
         }
     }
-    public int LReadFirst(){
+    public int listReadFirst(){
         this.pos = 0;
 
         return this.list[this.pos];
     }
-    public int LRead(){
-        if(LNext()){
+    public int listRead(){
+        if(listIsNext()){
             this.pos++;
             return this.list[this.pos];
         } else {
             return 0;
         }
     }
-    public int LRemove(){
+    public int listRemove(){
         int del = this.list[pos];
         for(int i=this.pos; i < this.count-1; i++) {
             this.list[i] = this.list[i + 1];
@@ -56,7 +54,7 @@ public class Array_List implements List_Inter {
 
 
     }
-    public boolean LNext(){
+    public boolean listIsNext(){
         if(this.pos < this.count-1 ){
             return true;
         } else {
@@ -64,7 +62,7 @@ public class Array_List implements List_Inter {
         }
     }
 
-    public int LCount() {
+    public int listCount() {
         return this.count;
     }
 

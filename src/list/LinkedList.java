@@ -1,8 +1,6 @@
-package list.linkedList;
+package list;
 
-import list.List_Inter;
-
-public class Linked_List implements List_Inter {
+public class LinkedList implements ListInterface {
 
     private class Node {
         int data;
@@ -15,7 +13,7 @@ public class Linked_List implements List_Inter {
     Node cur;
     Node before;
 
-    public boolean LInit(){
+    public boolean listInit(){
         this.head = null;
         this.tail = null;
         this.cur = null;
@@ -25,7 +23,7 @@ public class Linked_List implements List_Inter {
         return true;
     }
 
-    public int LInsertFirst(int data){
+    public int listInsertFirst(int data){
         Node node = new Node();
         node.data = data;
         node.next = null;
@@ -36,7 +34,7 @@ public class Linked_List implements List_Inter {
         return this.head.data;
     }
 
-    public int LInsert(int data){
+    public int listInsert(int data){
         Node node = new Node();
         node.data = data;
         node.next = null;
@@ -53,13 +51,13 @@ public class Linked_List implements List_Inter {
         return this.tail.data;
     }
 
-    public int LReadFirst(){
+    public int listReadFirst(){
         this.cur = this.head;
         this.before = this.head;
         return this.cur.data;
     }
 
-    public int LRead(){
+    public int listRead(){
         if(this.cur.next == null) {
             System.out.println("조회할 데이터가 더 이상 없습니다");
             return 0;
@@ -74,7 +72,7 @@ public class Linked_List implements List_Inter {
     }
 
 
-    public int LRemove(){
+    public int listRemove(){
         int del =  this.cur.data;
         this.before.next = this.cur.next;
 
@@ -83,7 +81,7 @@ public class Linked_List implements List_Inter {
         return del;
     }
 
-    public boolean LNext() {
+    public boolean listIsNext() {
         if(this.cur.next == null) {
             return false;
         } else if(this.cur.next != null) {
@@ -92,7 +90,7 @@ public class Linked_List implements List_Inter {
         return true;
     }
 
-    public int LCount(){
+    public int listCount(){
         return this.count;
     }
 
