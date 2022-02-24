@@ -7,7 +7,8 @@ public class LMain {
 //        ArrayListBasic aList = new ArrayListBasic();
 //        LinkedList aList = new LinkedList();
 //        LinkedListDummy aList = new LinkedListDummy();
-        DoublyLinkedList aList = new DoublyLinkedList();
+//        DoublyLinkedList aList = new DoublyLinkedList();
+        DoublyLinkedListDummy aList = new DoublyLinkedListDummy();
 
         //리스트 초기화
         aList.listInit();
@@ -32,7 +33,7 @@ public class LMain {
 
 
         //데이터 삭제
-        int target = 5;
+        int target = 2;
         if(aList.listReadFirst() == target) {
             result = aList.listRemove();
             LPrint(3, result);
