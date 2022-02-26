@@ -20,6 +20,11 @@ public class DoublyLinkedList implements ListInterface {
         return true;
     }
 
+//    HEAD
+//    (B1|D1|N1)
+//    (B2|D2|N2)<==>(B1|D1|N1)
+//    (B3|D3|N3)<==>(B2|D2|N2)<==>(B1|D1|N1)
+
     public int listInsert(int data){
 
         Node node = new Node();

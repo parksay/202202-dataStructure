@@ -12,6 +12,12 @@ public class LinkedListDummy implements ListInterface {
     Node cur;
     Node before;
 
+//    HEAD
+//    (dummy)
+//    (dummy)---(D1|N1)
+//    (dummy)---(D2|N2)---(D1|N1)
+//    (dummy)---(D3|N3)---(D2|N2)---(D1|N1)
+
     public boolean listInit(){
         Node dummy = new Node();
         dummy.data = 0;

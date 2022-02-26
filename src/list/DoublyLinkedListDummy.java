@@ -13,6 +13,14 @@ public class DoublyLinkedListDummy implements ListInterface {
     Node tail;
     Node cur;
 
+
+//    HEAD=(dummy)<==>(dummy)=tail    //both of head and tail are null
+//    HEAD=(dummy)<==>(B1|D1|N1)<==>(dummy)=tail  //insert head
+//    HEAD=(dummy)<==>(B2|D2|N2)<==>(B1|D1|N1)<==>(dummy)=tail    //insert head
+//    HEAD=(dummy)<==>(B3|D3|N3)<==>(B2|D2|N2)<==>(B1|D1|N1)<==>(dummy)=tail  //insert haed
+//    HEAD=(dummy)<==>(B3|D3|N3)<==>(B2|D2|N2)<==>(B1|D1|N1)<==>(B4|D4|N4)<==>(dummy)=tail    //insert tail
+//    HEAD=(dummy)<==>(B3|D3|N3)<==>(B2|D2|N2)<==>(B1|D1|N1)<==>(B4|D4|N4)<==>(B5|D5|N5)<==>(dummy)=tail  //insert tail
+
     public boolean listInit(){
 
         this.count = 0;

@@ -11,6 +11,21 @@ public class CircularLinkedList implements ListInterface {
     Node cur;
     Node before;
 
+//    TAIL
+//    (D1|N1)     //insert tail
+//    |_____|
+//    (D2|N2)---(D1|N1)       //insert tail
+//    |_______________|
+//    (D3|N3)---(D1|N1)---(D2|N2)     //insert tail
+//    |_________________________|
+//    (D4|N4)---(D1|N1)---(D2|N2)---(D3|N3)       //insert tail
+//    |___________________________________|
+//    (D4|N4)---(D5|N5)---(D1|N1)---(D2|N2)---(D3|N3)     //insert head
+//    |_____________________________________________|
+//    (D4|N4)---(D6|N6)---(D5|N5)---(D1|N1)---(D2|N2)---(D3|N3)       //insert head
+//    |_______________________________________________________|
+
+
     public boolean listInit(){
 
         this.count = 0;

@@ -13,6 +13,11 @@ public class LinkedList implements ListInterface {
     Node cur;
     Node before;
 
+//    HEAD
+//    (D1|N1)=tail
+//    (D1|N1)---(D2|N2)=tail
+//    (D1|N1)---(D2|N2)---(D3|N3)=tail
+
     public boolean listInit(){
         this.head = null;
         this.tail = null;
