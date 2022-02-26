@@ -1,5 +1,7 @@
 package stack;
 
+import org.junit.jupiter.api.Test;
+
 public class InfixCalculatorTest {
 
 
@@ -11,4 +13,15 @@ public class InfixCalculatorTest {
 //
 //    int result = PostCalculator.eval(postfixStack);
 
+    @Test
+    public void integerTest(){
+        final String REGEX = "[0-9]+";
+        String a = "1234234";
+        if(a.matches(REGEX)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+
+        }
+    }
 }
