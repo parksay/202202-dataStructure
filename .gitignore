@@ -1,0 +1,4 @@
+#ignore IntelliJ folder
+.idea/
+#ignore out folder
+out/

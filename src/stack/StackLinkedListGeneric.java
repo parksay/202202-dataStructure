@@ -1,13 +1,11 @@
 package stack;
 
-import java.util.Map;
+public class StackLinkedListGeneric<T> {
 
-public class StackLinkedList implements StackInterface {
 
     private class Node {
-        int data;
+        T data;
         Node below;
-
     }
 
     Node head;
@@ -20,7 +18,7 @@ public class StackLinkedList implements StackInterface {
 
     public void stackInit() {
         Node node = new Node();
-        node.data = 0;
+        node.data = null;
         node.below = null;
 
         this.head = node;
@@ -36,7 +34,7 @@ public class StackLinkedList implements StackInterface {
         }
     }
 
-    public int stackPush(int data) {
+    public T stackPush(T data) {
         Node node = new Node();
         node.data = data;
         node.below = this.head.below;
@@ -45,18 +43,18 @@ public class StackLinkedList implements StackInterface {
         return this.head.below.data;
     }
 
-    public int stackPop() {
+    public T stackPop() {
         if(this.count < 1 || this.head.below == null) {
-            return 0;
+            return null;
         } else {
-            int data = this.head.below.data;
+            T data = this.head.below.data;
             this.head.below = this.head.below.below;
             this.count--;
             return data;
         }
     }
 
-    public int stackPeek() {
+    public T stackPeek() {
 
         return this.head.below.data;
     }
@@ -65,5 +63,7 @@ public class StackLinkedList implements StackInterface {
 
         return this.count;
     }
+
+
 
 }

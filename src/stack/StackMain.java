@@ -5,7 +5,8 @@ public class StackMain {
     public static void main(String args[]) {
 
 //        StackBasic stack = new StackBasic();
-        StackLinkedList stack = new StackLinkedList();
+//        StackLinkedList stack = new StackLinkedList();
+        StackLinkedListGeneric<Integer> stack = new StackLinkedListGeneric<Integer>();
 
         stack.stackInit();
         int result = 0;
