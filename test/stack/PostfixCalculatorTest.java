@@ -8,7 +8,6 @@ public class PostfixCalculatorTest {
 
     private PostfixCalculator postCal = new PostfixCalculator();
 
-    //TODO : test infix expression that include ()
 
     @Test
     public void evalTest() {
@@ -18,11 +17,13 @@ public class PostfixCalculatorTest {
         //given
         StackLinkedListGeneric<String> before = new StackLinkedListGeneric<String>();
         before.stackInit();
+        before.stackPush(")");
         before.stackPush("3");
         before.stackPush("+");
         before.stackPush("2");
+        before.stackPush("(");
         before.stackPush("*");
-        before.stackPush("1");
+        before.stackPush("2");
         StackLinkedListGeneric<String> postfix = new StackLinkedListGeneric<String>();
         postfix = InfixToPostfix.convert(before);
         postfix = postfix.stackReverse();
@@ -32,6 +33,6 @@ public class PostfixCalculatorTest {
 
 
         //then
-        Assertions.assertEquals(5, result);
+        Assertions.assertEquals(10, result);
     }
 }

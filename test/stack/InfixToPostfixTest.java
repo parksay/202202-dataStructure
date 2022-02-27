@@ -2,7 +2,6 @@ package stack;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 
 
 public class InfixToPostfixTest {
@@ -40,8 +39,8 @@ public class InfixToPostfixTest {
         int length = expect.stackCount();
         for(int i = 0; i < length; i++) {
             if(!expect.stackIsEmpty() && !after.stackIsEmpty()) {
-//                System.out.println(after.stackPop());
-                Assertions.assertEquals(expect.stackPop(), after.stackPop());
+                System.out.println(after.stackPop());
+//                Assertions.assertEquals(expect.stackPop(), after.stackPop());
             }
         }
     }

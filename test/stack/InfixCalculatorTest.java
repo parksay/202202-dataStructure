@@ -5,14 +5,6 @@ import org.junit.jupiter.api.Test;
 public class InfixCalculatorTest {
 
 
-//    //TODO
-//    String infixString = "test";
-//    Stack infixStack = StringToStack.convert(infixString);
-//
-//    Stack postfixStack = InfixToPostfix.convert(infixStack);
-//
-//    int result = PostfixCalculator.eval(postfixStack);
-
     @Test
     public void reverseTest() {
         StackLinkedListGeneric<Integer> test = new StackLinkedListGeneric<Integer>();
@@ -21,7 +13,7 @@ public class InfixCalculatorTest {
         test.stackPush(Integer.valueOf(3));
         test.stackPush(Integer.valueOf(1));
 
-//        test = test.stackReverse();
+        test = test.stackReverse();
         while(!test.stackIsEmpty()){
             System.out.println(test.stackPop());
         }

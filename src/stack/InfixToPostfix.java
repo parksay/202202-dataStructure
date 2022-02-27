@@ -8,8 +8,6 @@ public class InfixToPostfix {
         StackLinkedListGeneric<String> operator = new StackLinkedListGeneric<String>();
         after.stackInit();
         operator.stackInit();
-        //1 * 2 + 3 ===>  1 2 * 3 +
-        //1 * (2 + 3) ===>  1 2 3 + *
 
         final String REGEX = "[0-9]+";
         outer:while(!before.stackIsEmpty()){
