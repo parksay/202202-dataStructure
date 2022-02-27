@@ -11,7 +11,22 @@ public class InfixCalculatorTest {
 //
 //    Stack postfixStack = InfixToPostfix.convert(infixStack);
 //
-//    int result = PostCalculator.eval(postfixStack);
+//    int result = PostfixCalculator.eval(postfixStack);
+
+    @Test
+    public void reverseTest() {
+        StackLinkedListGeneric<Integer> test = new StackLinkedListGeneric<Integer>();
+        test.stackInit();
+        test.stackPush(Integer.valueOf(5));
+        test.stackPush(Integer.valueOf(3));
+        test.stackPush(Integer.valueOf(1));
+
+//        test = test.stackReverse();
+        while(!test.stackIsEmpty()){
+            System.out.println(test.stackPop());
+        }
+    }
+
 
     @Test
     public void integerTest(){

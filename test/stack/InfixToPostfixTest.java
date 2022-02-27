@@ -27,21 +27,21 @@ public class InfixToPostfixTest {
         before.stackPush("1");
         StackLinkedListGeneric<String> expect = new StackLinkedListGeneric<String>();
         expect.stackInit();
-        expect.stackPush("+");
-        expect.stackPush("3");
-        expect.stackPush("*");
-        expect.stackPush("2");
         expect.stackPush("1");
+        expect.stackPush("2");
+        expect.stackPush("*");
+        expect.stackPush("3");
+        expect.stackPush("+");
 
         //when
         StackLinkedListGeneric<String> after = converter.convert(before);
 
         //then
-        int length = expect.stackCount() - 1;
+        int length = expect.stackCount();
         for(int i = 0; i < length; i++) {
             if(!expect.stackIsEmpty() && !after.stackIsEmpty()) {
-                System.out.println(after.stackPop());
-//                Assertions.assertEquals(expect.stackPop(), after.stackPop());
+//                System.out.println(after.stackPop());
+                Assertions.assertEquals(expect.stackPop(), after.stackPop());
             }
         }
     }

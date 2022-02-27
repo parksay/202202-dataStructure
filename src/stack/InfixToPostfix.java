@@ -11,8 +11,8 @@ public class InfixToPostfix {
         //1 * 2 + 3 ===>  1 2 * 3 +
         //1 * (2 + 3) ===>  1 2 3 + *
 
+        final String REGEX = "[0-9]+";
         outer:while(!before.stackIsEmpty()){
-            final String REGEX = "[0-9]+";
             String next = before.stackPop();
             if(next.matches(REGEX)) {   //next is numeric
                 after.stackPush(next);
@@ -56,12 +56,12 @@ public class InfixToPostfix {
 
     public static int compOperator(String op1, String op2) {
         //if op1 is greater than op2 : returns > 0
-        //if op2 is greater than op1 : returns < 0
+        //if op1 is less than op2 : returns < 0
         //if op1 and op2 are equal : returns 0
 
         String[] ops = {op1, op2};
         int[] ranks = new int[ops.length];
-        for(int i = 0; i < ops.length-1; i++) {
+        for(int i = 0; i < ops.length; i++) {
             if(ops[i] == "(") {
                 ranks[i] = 1;
                 continue;
@@ -76,6 +76,7 @@ public class InfixToPostfix {
                 continue;
             }
         }
+
 
         if(ranks[0] > ranks[1]) {
             return 1;
