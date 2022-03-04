@@ -6,11 +6,9 @@ public class TreeMain {
 
     public static void main(String args[]) {
         BinaryTree rootTree = new BinaryTree();
-        int[] input = {3, 6, 7, 11, 13, 19, 7};
+        int[] input = {3, 6, 7, 11, 13, 19, 23};
 //        ArrayList<BinaryTree> treeList = new ArrayList<>();
         DoublyLinkedListDummyGeneric<BinaryTree> treeList = new DoublyLinkedListDummyGeneric<>();
-
-        //TODO : create method traversal
 
         String result = "";
         for(int i = 0; i < input.length; i++) {
@@ -29,10 +27,11 @@ public class TreeMain {
         treeList.get(3).setLeftSubTree(treeList.get(5));
         treeList.get(3).setRightSubTree(treeList.get(6));
 
-        result = rootTree.getLeftSubTree().getData();
-        printResult(2, result);
-        result = rootTree.getLeftSubTree().getLeftSubTree().getData();
-        printResult(2, result);
+        System.out.println("___________print__________");
+        rootTree.printSubTree();
+        System.out.println("__________remove___________");
+        rootTree.removeLeftSubTree();
+        rootTree.printSubTree();
 
     }
     
