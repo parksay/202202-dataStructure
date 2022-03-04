@@ -2,6 +2,7 @@ package tree;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class ExpressionTreeMainTest {
@@ -11,7 +12,6 @@ public class ExpressionTreeMainTest {
 
     @Test
     public void mainTest() {
-
 
         Stack<String> postfix = new Stack<>();
         //level1 : 3 * (2 + 4)  => 3 2 4 + *
