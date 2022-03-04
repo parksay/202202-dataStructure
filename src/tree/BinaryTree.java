@@ -3,9 +3,9 @@ package tree;
 public class BinaryTree implements TreeInterface {
 
 
-    String data;
-    BinaryTree left;
-    BinaryTree right;
+    private String data;
+    private BinaryTree left;
+    private BinaryTree right;
 
     public void treeInit() {
         this.data = null;

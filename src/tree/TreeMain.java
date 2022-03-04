@@ -7,12 +7,12 @@ public class TreeMain {
     public static void main(String args[]) {
         BinaryTree rootTree = new BinaryTree();
         int[] input = {3, 6, 7, 11, 13, 19, 7};
+//        ArrayList<BinaryTree> treeList = new ArrayList<>();
+        DoublyLinkedListDummyGeneric<BinaryTree> treeList = new DoublyLinkedListDummyGeneric<>();
 
-        //TODO : create doubly linked list dummy generic
         //TODO : create method traversal
 
         String result = "";
-        ArrayList<BinaryTree> treeList = new ArrayList<>();
         for(int i = 0; i < input.length; i++) {
             BinaryTree node = new BinaryTree();
             node.treeInit();
