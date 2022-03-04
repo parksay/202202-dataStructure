@@ -1,11 +1,11 @@
 package tree;
 
-public class BinaryTree implements TreeInterface {
+public class BinaryTreeCustom implements TreeInterface {
 
 
     private String data;
-    private BinaryTree left;
-    private BinaryTree right;
+    private BinaryTreeCustom left;
+    private BinaryTreeCustom right;
 
     public void treeInit() {
         this.data = null;
@@ -26,22 +26,22 @@ public class BinaryTree implements TreeInterface {
         return this.data;
     }
 
-    public BinaryTree getLeftSubTree(){
+    public BinaryTreeCustom getLeftSubTree(){
 
         return this.left;
     }
 
-    public BinaryTree getRightSubTree(){
+    public BinaryTreeCustom getRightSubTree(){
 
         return this.right;
     }
 
-    public boolean setLeftSubTree(BinaryTree subTree){
+    public boolean setLeftSubTree(BinaryTreeCustom subTree){
         this.left = subTree;
         return true;
     }
 
-    public boolean setRightSubTree(BinaryTree subTree){
+    public boolean setRightSubTree(BinaryTreeCustom subTree){
         this.right = subTree;
         return true;
     }
@@ -60,9 +60,8 @@ public class BinaryTree implements TreeInterface {
     }
 
 
-    public boolean printSubTree() {
+    public void printSubTree() {
         this.traverse(1);
-        return true;
     }
 
 

@@ -1,6 +1,6 @@
 package tree;
 
-public class DoublyLinkedListDummyGeneric<T> {
+public class ArrayListCustom<T> {
 
     private class Node {
         T data;
@@ -13,7 +13,7 @@ public class DoublyLinkedListDummyGeneric<T> {
     private Node head;
     private Node tail;
 
-    public DoublyLinkedListDummyGeneric() {
+    public ArrayListCustom() {
         Node dummyHead = new Node();
         dummyHead.data = null;
         dummyHead.index = -1;

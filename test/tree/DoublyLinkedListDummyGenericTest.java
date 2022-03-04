@@ -7,17 +7,17 @@ public class DoublyLinkedListDummyGenericTest {
 
     @Test
     public void mainTest(){
-        DoublyLinkedListDummyGeneric<BinaryTree> list = new DoublyLinkedListDummyGeneric<>();
+        ArrayListCustom<BinaryTreeCustom> list = new ArrayListCustom<>();
         Assertions.assertEquals(null, list.get(3));
         Assertions.assertEquals(false, list.remove(1));
         Assertions.assertEquals(0, list.getCount());
 
 
-        BinaryTree node1 = new BinaryTree();
-        BinaryTree node2 = new BinaryTree();
-        BinaryTree node3 = new BinaryTree();
-        BinaryTree node4 = new BinaryTree();
-        BinaryTree node5 = new BinaryTree();
+        BinaryTreeCustom node1 = new BinaryTreeCustom();
+        BinaryTreeCustom node2 = new BinaryTreeCustom();
+        BinaryTreeCustom node3 = new BinaryTreeCustom();
+        BinaryTreeCustom node4 = new BinaryTreeCustom();
+        BinaryTreeCustom node5 = new BinaryTreeCustom();
         node1.treeInit();
         node1.setData("3");
         node2.treeInit();

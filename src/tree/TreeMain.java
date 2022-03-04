@@ -1,18 +1,16 @@
 package tree;
 
-import java.util.ArrayList;
-
 public class TreeMain {
 
     public static void main(String args[]) {
-        BinaryTree rootTree = new BinaryTree();
+        BinaryTreeCustom rootTree = new BinaryTreeCustom();
         int[] input = {3, 6, 7, 11, 13, 19, 23};
 //        ArrayList<BinaryTree> treeList = new ArrayList<>();
-        DoublyLinkedListDummyGeneric<BinaryTree> treeList = new DoublyLinkedListDummyGeneric<>();
+        ArrayListCustom<BinaryTreeCustom> treeList = new ArrayListCustom<>();
 
         String result = "";
         for(int i = 0; i < input.length; i++) {
-            BinaryTree node = new BinaryTree();
+            BinaryTreeCustom node = new BinaryTreeCustom();
             node.treeInit();
             result = node.setData(input[i]+"");
             treeList.add(node);
