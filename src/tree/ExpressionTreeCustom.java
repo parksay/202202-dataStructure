@@ -4,8 +4,54 @@ import customDataStructure.StackCustom;
 
 import java.util.Stack;
 
-public class ExpressionTreeCustom extends BinaryTreeCustom {
+public class ExpressionTreeCustom{
 
+    private ExpressionTreeCustom left;
+    private ExpressionTreeCustom right;
+    private String data;
+
+    public void treeInit() {
+        this.left = null;
+        this.right = null;
+        this.data = null;
+    }
+
+    public ExpressionTreeCustom getLeftSubTree() {
+        return left;
+    }
+
+    public void setLeftSubTree(ExpressionTreeCustom left) {
+        this.left = left;
+    }
+
+    public ExpressionTreeCustom getRightSubTree() {
+        return right;
+    }
+
+    public void setRightSubTree(ExpressionTreeCustom right) {
+        this.right = right;
+    }
+
+    public boolean removeLeftSubTree() {
+        this.left.traverse(2);
+        this.left = null;
+        return true;
+    }
+
+    public boolean removeRightSubTree() {
+        this.right.traverse(2);
+        this.right = null;
+        return true;
+    }
+
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
     public boolean makeExpTree(Stack<String> postfixStack){
         //3 2 4 + *
@@ -59,4 +105,48 @@ public class ExpressionTreeCustom extends BinaryTreeCustom {
         return true;
     }
 
+    public int evalExpTree(){
+
+        if(this.getLeftSubTree() == null || this.getRightSubTree() == null) {
+            return Integer.valueOf(this.getData());
+        }
+        int op1 = this.getLeftSubTree().evalExpTree();
+        int op2 = this.getRightSubTree().evalExpTree();
+        switch (this.getData()) {
+            case "+" :
+                return op1 + op2;
+            case "-" :
+                return op1 - op2;
+            case "*" :
+                return op1 * op2;
+            case "/" :
+                return op1 / op2;
+            default:
+                return 0;
+        }
+    }
+
+    public void printSubTree() {
+        this.traverse(1);
+
+    }
+
+    public void traverse(int action) {
+        if(this.getLeftSubTree() != null) {
+            this.getLeftSubTree().traverse(action);
+        }
+        if(this.getRightSubTree() != null) {
+            this.getRightSubTree().traverse(action);
+        }
+        switch (action) {
+            case 1 :
+                System.out.println(this.getData());
+                break;
+            case 2 :
+                this.setData(null);
+                this.setLeftSubTree(null);
+                this.setRightSubTree(null);
+                break;
+        }
+    }
 }

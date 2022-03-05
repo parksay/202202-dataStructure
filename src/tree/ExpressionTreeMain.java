@@ -36,7 +36,7 @@ public class ExpressionTreeMain {
         expTree.makeExpTree(postfixStack);
         expTree.printSubTree();
 
-        //TODO : create method evaluate expression tree
+        System.out.println(expTree.evalExpTree());
     }
 
 }
