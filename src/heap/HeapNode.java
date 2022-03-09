@@ -37,7 +37,7 @@ public class HeapNode {
         int supIndex = this.getSupIndex(curIndex);
 
         while(supIndex > 0) {
-            if(this.nodeArr[this.lastIndex].priority < this.nodeArr[supIndex].priority) {
+            if(node.priority < this.nodeArr[supIndex].priority) {
                 this.nodeArr[curIndex] = this.nodeArr[supIndex];
                 curIndex = supIndex;
                 supIndex = this.getSupIndex(curIndex);
@@ -98,7 +98,7 @@ public class HeapNode {
         int subIndex = 0;
         int left = this.getLeftSubIndex(curIndex);
         int right = this.getRightSubIndex(curIndex);
-        if(left > this.lastIndex || left == 0 || right == 0) {
+        if(left > this.lastIndex || left == 0) {
             return subIndex;
         } else if(left == this.lastIndex) {     // curNode has only one sub node(left one)
             subIndex = this.getLeftSubIndex(curIndex);
