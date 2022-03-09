@@ -16,14 +16,21 @@ public class HeapMain {
         result = heap.pop();
         printHeap(2, result);
 
-        result = heap.push("A", 1);
+        result = heap.push("D", 4);
         printHeap(1, result);
-        result = heap.push("B", 2);
+        result = heap.push("E", 5);
         printHeap(1, result);
-        result = heap.push("C", 3);
+        result = heap.push("F", 6);
         printHeap(1, result);
         result = heap.pop();
         printHeap(2, result);
+
+        result = heap.push("A", 1);
+        printHeap(1, result);
+        result = heap.push("H", 8);
+        printHeap(1, result);
+        result = heap.push("G", 7);
+        printHeap(1, result);
 
         System.out.println("__________반복문___________");
         while(!heap.isEmpty()) {
